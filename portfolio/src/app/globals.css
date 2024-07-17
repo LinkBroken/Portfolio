@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: rgb(93, 93, 93);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: sans-serif;
+  color: white;
+  align-items: center;
+
+}
+
+/* body> div{
+  box-shadow: white;
+} */
+
+.main{
+  width: 100%;
+  align-self: center;
+  margin-top: 10%;
+  /* margin-right: 25%; */
+}
