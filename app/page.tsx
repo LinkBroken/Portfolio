@@ -6,7 +6,6 @@ import "./styles/globals.css";
 import user from "@/assets/userImage.png";
 import logo from "@/assets/logo.svg";
 import { navLinks } from "@/stories/components/Navbar/Navbar.stories";
-import { Fragment } from "react";
 
 const navBarProps = {
   links: navLinks,
