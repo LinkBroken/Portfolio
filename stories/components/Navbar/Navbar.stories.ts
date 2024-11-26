@@ -20,7 +20,7 @@ export const navLinks = [
   { href: "#", label: "Skills" },
   { href: "#", label: "Portfolio" },
 ];
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+
 export const Full: Story = {
   args: {
     links: navLinks,
