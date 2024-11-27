@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Footer from "@/app/components/Footer/Footer";
-import logo from "@/assets/logo-2.svg";
 import { links } from "../Hero/Hero.stories";
 
 const meta = {
