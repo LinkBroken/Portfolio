@@ -15,15 +15,15 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const Links = [
+export const navLinks = [
   { href: "#", label: "About me" },
   { href: "#", label: "Skills" },
   { href: "#", label: "Portfolio" },
 ];
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+
 export const Full: Story = {
   args: {
-    links: Links,
+    links: navLinks,
     logo: logo,
     logoAlt: "Alt text",
   },
@@ -31,7 +31,7 @@ export const Full: Story = {
 
 export const withLinksOnly: Story = {
   args: {
-    links: Links,
+    links: navLinks,
     linksOnly: true,
   },
 };

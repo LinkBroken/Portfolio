@@ -1,0 +1,79 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary) 50%,
+    var(--color-primary) 50%
+  );
+  min-height: 100vh;
+}
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  grid-column: 2;
+  grid-row: 1;
+  background-color: var(--color-secondary) 50%;
+}
+.imageContainer img {
+  max-width: 70%;
+}
+.greeting {
+  font-size: var(--font-md);
+  margin-bottom: var(--size-md-1);
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+  background-color: var(--color-primary) 50%;
+  padding: var(--size-lg-1) var(--size-md-1);
+}
+.name {
+  font-size: var(--font-2xl);
+  margin-bottom: var(--size-md-1);
+}
+.job {
+  color: var(--color-beige);
+  font-size: var(--font-lg);
+  margin-bottom: var(--size-md-1);
+}
+.links {
+  display: flex;
+  list-style-type: none;
+  gap: var(--size-md-1);
+  font-size: var(--font-md);
+}
+
+.link > svg:hover {
+  transition: 0.5s;
+  border-radius: var(--sm-md-1);
+  background: var(--color-primary);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    place-content: center;
+    background-image: url("https://s3-alpha-sig.figma.com/img/ecd8/88c5/db9f58415906487e880f6e484d0661e3?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YsCqyYBPthBmr148WkNUVhrj7HKMPyIoru39qDe9Nj1G95B4KNrC7Oa6OryeRf8kECWeN6O~HzXz1~7qYx9OxVt~J6ik23RetDRE0gHU93h9QS1u3lodR4E~sT4-OYNRb9UrUb9vRKnmSZ98ICOKrGsrZFtiZnyvmV8wHKhYlOJrh9zZmeXufBL2nD3IypNwBJzdruLE1Vzf9660n9XISI9RlF3J3oz5xDL1EyKxhdU~9LVpe9qM6F~V93mHuu2szUIFivNnBsSDAa7nhSV4d1vwRLtNJKhGpOcusbtvjGRGBaNXSaacjU5U0RxxZEq27iK8mgzo7wlAHG4DjADSag__");
+  }
+  .name {
+    margin-bottom: 0;
+  }
+  .imageContainer {
+    display: none;
+  }
+  .details,
+  .job {
+    align-items: center;
+    color: var(--color-white);
+    padding: var(--size-md-1) var(--size-sm-2);
+    text-align: center;
+    /* gap: var(--size-sm-); */
+  }
+  .greeting {
+    margin-bottom: var(--size-sm-1);
+  }
+}
