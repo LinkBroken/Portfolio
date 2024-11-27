@@ -58,6 +58,7 @@
   .navContainer {
     background: var(--color-black);
     grid-template-columns: 1fr;
+    position: relative;
   }
   .image,
   .links,
@@ -72,6 +73,7 @@
     align-items: flex-start;
     padding: 0;
   }
+
   .burgerMenu {
     display: block;
     margin-left: var(--size-sm-1);

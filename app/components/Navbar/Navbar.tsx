@@ -30,8 +30,8 @@ export default function Navbar({
 
   return (
     <motion.nav
-      animate={{ x: 10 }}
-      initial={{ x: 0 }}
+      // animate={{ x: 10 }}
+      // initial={{ x: 0 }}
       className={styles.navContainer}
     >
       {logo && !linksOnly && (
