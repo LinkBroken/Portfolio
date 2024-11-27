@@ -47,6 +47,11 @@
 
   --color-hover-btn: #1e5352;
 
+  /* Footer background images*/
+
+  --desktop-background: url("../../assets/logo.png");
+  --mobile-background: url("../../assets/logo-3.png");
+
   /* Media query Breakpoints */ /* Large Screen */
   @media screen and (max-width: 1024px) {
   }
