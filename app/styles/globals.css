@@ -34,6 +34,7 @@
   --color-white: white;
   --color-black: black;
   --color-beige: #909090;
+  --color-bg: rgb(48, 48, 48);
 
   /* Primary */
   --color-primary: #32908f;
@@ -67,4 +68,8 @@
 
 html {
   font-size: 62.5%;
+}
+
+* {
+  font-family: sans-serif;
 }
