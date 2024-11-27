@@ -3,7 +3,7 @@ import styles from "./hero.module.css";
 import React from "react";
 import Link from "next/link";
 
-type link = {
+export type link = {
   element: React.ReactNode;
   href: string;
 };
