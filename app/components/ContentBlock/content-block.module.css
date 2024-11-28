@@ -1,0 +1,66 @@
+.container--about {
+  display: flex;
+  padding: var(--size-lg-1);
+  gap: var(--size-md-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container--skills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--size-md-2);
+  max-width: 50%;
+  margin: 0 auto;
+  place-content: center;
+  padding: var(--size-lg-1);
+}
+
+.infoCard,
+.skillCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-sm-2);
+}
+
+.infoCard {
+  align-items: flex-start;
+  max-width: 40%;
+}
+
+.skillCard {
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.description {
+  font-size: var(--font-sm);
+  color: var(--color-beige);
+  word-spacing: 3px;
+}
+
+.image {
+  width: 84px;
+  height: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container--skills {
+    grid-template-columns: 50% 50%;
+    max-width: 100%;
+    padding: var(--size-md-2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .infoCard {
+    max-width: max-content;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .container--skills {
+    grid-template-columns: 50%;
+    padding: var(--size-sm-2);
+  }
+}
