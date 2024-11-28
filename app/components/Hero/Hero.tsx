@@ -38,6 +38,7 @@ export default function Hero({
           <ul className={styles.links}>
             {socialLinks?.map((link) => (
               <Link
+                key={link.href}
                 target="_blank"
                 href={link.href}
                 dangerouslySetInnerHTML={{ __html: link.element! }}
