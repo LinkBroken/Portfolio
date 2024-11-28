@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const informationLinks = [
+export const informationLinks = [
   {
     title: "DESIGN",
     description:
@@ -36,7 +36,7 @@ export const About: Story = {
   },
 };
 
-const skills = [
+export const skills = [
   {
     name: "JAVASCRIPT",
     image:
