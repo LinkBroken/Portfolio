@@ -1,14 +1,25 @@
 .titleContainer {
   display: flex;
   flex-direction: column;
-  padding: var(--size-sm-3);
 }
 
+.titleContainer--padding {
+  padding: var(--size-sm-3);
+}
+.titleContainer--nopadding {
+  padding: 0;
+}
 .title {
-  padding: 1rem;
   font-weight: 700;
 }
 
+.title--padding {
+  padding: 1rem;
+}
+
+.titel--nopadding {
+  padding: 0;
+}
 .title--small {
   font-size: var(--font-sm);
 }
@@ -45,7 +56,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .titleContainer {
+  .titleContainer--padding {
     padding: var(--size-sm-2);
   }
 
@@ -56,7 +67,7 @@
 }
 
 @media screen and (max-width: 375px) {
-  .titleContainer {
+  .titleContainer--padding {
     padding: var(--size-sm-1);
   }
 }
