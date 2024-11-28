@@ -29,7 +29,7 @@ export default function ContentBlock({
     >
       {information &&
         information?.map((detail) => (
-          <div className={styles.infoCard}>
+          <div key={detail.title} className={styles.infoCard}>
             <Title
               label={detail.title}
               key={detail.description}
@@ -45,7 +45,7 @@ export default function ContentBlock({
 
       {skills &&
         skills.map((skill) => (
-          <div className={styles.skillCard}>
+          <div key={skill.name} className={styles.skillCard}>
             <Title
               containerPadding={false}
               titlePadding={false}
