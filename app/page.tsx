@@ -14,8 +14,9 @@ import {
   informationLinks,
   skills,
 } from "@/stories/components/ContentBlock/ContentBlock.stories";
-import { useRef } from "react";
-
+import Aos from "aos";
+import "aos/dist/aos.css"
+import { useEffect } from "react";
 const navBarProps = {
   links: navLinks,
   logo: logo,
@@ -31,34 +32,25 @@ const heroProps = {
 };
 
 const footerProps = {
-  variant: "details",
   title: "IT BERRIES",
   description:
     "Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est. Morbi commodo, eros in dignissim tempus, lacus odio rutrum augue, in semper sem magna quis tellus. Etiam enim erat, suscipit eu semper a, dictum sit amet elit. Nunc egestas nisi eget enim gravida facilisis. Pellentesque laoreet varius turpis vel pharetra. Ut ante justo, consequat vitae elementum tempor, accumsan nec eros. ",
 };
 
 export default function Home() {
-  const ref = useRef(null);
 
-  const { scrollYProgress } = useScroll();
-
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 200,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
+  useEffect(() => {
+    // here you can add your aos options
+    Aos.init({
+      offset: 100,
+    });
+  }, []);
+  
   return (
     <div className="landing">
       <Navbar {...navBarProps} /> <Hero {...heroProps} />
-      <Footer {...footerProps} />
-      <motion.section
-        ref={ref}
-        style={{
-          backgroundColor: `var(--font-beige)`,
-          padding: `var(--size-md-2)`,
-          scaleX: scaleX,
-        }}
+      <Footer variant="details" {...footerProps} />
+      <div data-aos="fade-up" data-aos-duration="3000"
       >
         <Title
           containerPadding
@@ -70,7 +62,7 @@ export default function Home() {
         />
         <ContentBlock variant="about" information={informationLinks} />
         <ContentBlock variant="skills" skills={skills} />
-      </motion.section>
+      </div>
     </div>
   );
 }
