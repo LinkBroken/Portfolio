@@ -27,6 +27,10 @@
 
   --size-2xl-1: 14.4rem;
 
+  /* Max width*/
+
+  --max-width: 1216px;
+
   /* Colors */
 
   /* Plain */
