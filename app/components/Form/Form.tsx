@@ -1,12 +1,13 @@
 import classNames from "classnames";
 
 import styles from "./form.module.css";
+import Title from "../Title/TItle";
 
 type field = {
-  type: string;
+  type: "text" | "email" | "number";
   name: string;
   required?: boolean;
-  border: "cropped" | "full" | "none";
+  border: "cropped" | "full";
 };
 interface FormProps {
   introText?: string;
@@ -18,7 +19,16 @@ export default function Form({ fields, introText }: FormProps) {
   return (
     fields && (
       <section className={styles.section}>
-        {introText && <p className={styles.intro}>{introText}</p>}
+        {introText && (
+          <Title
+            titlePadding
+            size="large"
+            border
+            align="center"
+            label={introText}
+            containerPadding
+          />
+        )}
         <form className={styles.form}>
           {fields.map((field) => (
             <input
@@ -30,6 +40,7 @@ export default function Form({ fields, introText }: FormProps) {
               required={field.required}
             />
           ))}
+          <button className={styles.button}>Submit</button>
         </form>
         ;
       </section>
