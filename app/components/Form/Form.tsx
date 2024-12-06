@@ -38,6 +38,7 @@ export default function Form({ fields, introText }: FormProps) {
               name={field.name}
               type={field.type}
               required={field.required}
+              placeholder={field.name}
             />
           ))}
           <button className={styles.button}>Submit</button>
