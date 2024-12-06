@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./form.module.css";
 import Title from "../Title/TItle";
 
-type field = {
+export type field = {
   type: "text" | "email" | "number";
   name: string;
   required?: boolean;
