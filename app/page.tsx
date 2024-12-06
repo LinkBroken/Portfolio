@@ -15,8 +15,10 @@ import {
   skills,
 } from "@/stories/components/ContentBlock/ContentBlock.stories";
 import Aos from "aos";
-import "aos/dist/aos.css"
+import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Form from "./components/Form/Form";
+import { croppedLabel } from "@/stories/components/Form/Form.stories";
 const navBarProps = {
   links: navLinks,
   logo: logo,
@@ -38,20 +40,17 @@ const footerProps = {
 };
 
 export default function Home() {
-
   useEffect(() => {
-    // here you can add your aos options
     Aos.init({
       offset: 100,
     });
   }, []);
-  
+
   return (
     <div className="landing">
       <Navbar {...navBarProps} /> <Hero {...heroProps} />
       <Footer variant="details" {...footerProps} />
-      <div data-aos="fade-up" data-aos-duration="3000"
-      >
+      <div data-aos="fade-up" data-aos-duration="1500">
         <Title
           containerPadding
           titlePadding
@@ -63,6 +62,15 @@ export default function Home() {
         <ContentBlock variant="about" information={informationLinks} />
         <ContentBlock variant="skills" skills={skills} />
       </div>
+      <div data-aos="fade-up" data-aos-duration="1500">
+        <Form fields={[...croppedLabel]} introText="Form" />
+      </div>
+      <Footer
+        variant="footer"
+        copyright="@2020 Tomasz Gajda All Rights Reserved."
+        socialLinks={links}
+        link={{ href: "#", label: "Back to Top" }}
+      />
     </div>
   );
 }
