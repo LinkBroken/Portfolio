@@ -1,13 +1,9 @@
+import { useState } from "react";
 import Image from "next/image";
-import classnames from "classnames";
+import Link from "next/link";
+import classNames from "classnames";
 
 import styles from "./nav.module.css";
-import Link from "next/link";
-
-import { motion, useAnimation } from "framer-motion";
-
-import { useState } from "react";
-import classNames from "classnames";
 
 interface link {
   label: string;
@@ -30,11 +26,7 @@ export default function Navbar({
 
   return (
     <>
-      <motion.nav
-        // animate={{ x: 10 }}
-        // initial={{ x: 0 }}
-        className={styles.navContainer}
-      >
+      <nav className={styles.navContainer}>
         {logo && !linksOnly && (
           <div className={styles.imageWrapper}>
             <Image src={logo} alt={logoAlt ?? ""} className={styles.image} />
@@ -42,7 +34,7 @@ export default function Navbar({
         )}
         {links && (
           <div
-            className={classnames(styles.links, [
+            className={classNames(styles.links, [
               linksOnly && styles[`links--only`],
               isOpen && styles[`links--mobile`],
             ])}
@@ -74,7 +66,7 @@ export default function Navbar({
             d="M 3 9 A 1.0001 1.0001 0 1 0 3 11 L 47 11 A 1.0001 1.0001 0 1 0 47 9 L 3 9 z M 3 24 A 1.0001 1.0001 0 1 0 3 26 L 47 26 A 1.0001 1.0001 0 1 0 47 24 L 3 24 z M 3 39 A 1.0001 1.0001 0 1 0 3 41 L 47 41 A 1.0001 1.0001 0 1 0 47 39 L 3 39 z"
           ></path>
         </svg>
-      </motion.nav>
+      </nav>
     </>
   );
 }
