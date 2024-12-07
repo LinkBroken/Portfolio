@@ -50,7 +50,7 @@ export default function Home() {
     <div className="landing">
       <Navbar {...navBarProps} /> <Hero {...heroProps} />
       <Footer variant="details" {...footerProps} />
-      <div data-aos="fade-up" data-aos-duration="1500">
+      <div data-aos="fade-up" data-aos-duration="900">
         <Title
           containerPadding
           titlePadding
@@ -62,7 +62,7 @@ export default function Home() {
         <ContentBlock variant="about" information={informationLinks} />
         <ContentBlock variant="skills" skills={skills} />
       </div>
-      <div data-aos="fade-up" data-aos-duration="1500">
+      <div data-aos="fade-down" data-aos-duration="900">
         <Form fields={[...croppedLabel]} introText="Form" />
       </div>
       <Footer
