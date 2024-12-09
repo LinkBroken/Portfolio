@@ -13,6 +13,7 @@
   background-position: 120%;
   background-origin: content-box;
   background-repeat: no-repeat;
+  background-blend-mode: difference;
   gap: var(--font-sm);
 }
 
