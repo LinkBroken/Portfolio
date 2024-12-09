@@ -21,8 +21,9 @@ export default function Title({
   return (
     <div
       className={classNames(styles.titleContainer, {
-        [styles[`container--${containerPadding ? "padding" : "nopadding "}`]]:
-          containerPadding,
+        [styles[
+          `titleContainer--${containerPadding ? "padding" : "nopadding "}`
+        ]]: containerPadding,
       })}
     >
       <h1
