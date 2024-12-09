@@ -48,8 +48,8 @@
 }
 
 .link > svg:hover {
-  transition: 0.5s;
-  border-radius: var(--sm-md-1);
+  transition: 0.2s;
+  border-radius: 50%;
   background: var(--color-primary);
 }
 
@@ -71,7 +71,6 @@
     color: var(--color-white);
     padding: var(--size-md-1) var(--size-sm-2);
     text-align: center;
-    /* gap: var(--size-sm-); */
   }
   .greeting {
     margin-bottom: var(--size-sm-1);
