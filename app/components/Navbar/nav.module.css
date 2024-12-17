@@ -11,6 +11,7 @@
 
 .burgerMenu {
   display: none;
+  transition: all 0.9s;
 }
 
 .imageWrapper {
@@ -52,6 +53,9 @@
   .links {
     font-size: var(--size-sm-1);
   }
+  .burgerMenu--open {
+    stroke: rgb(255, 0, 0);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -80,6 +84,7 @@
     width: 10%;
     rotate: 10px;
   }
+
   .links--mobile {
     display: flex;
   }

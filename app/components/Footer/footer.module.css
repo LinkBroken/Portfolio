@@ -67,14 +67,19 @@
   }
 
   .description {
-    font-size: var(--font-md);
+    font-size: var(--font-sm-2);
     text-align: left;
+    padding: var(--size-sm-2);
+    word-break: break-all;
+    word-spacing: 0.4rem;
+    letter-spacing: 0.5rem;
   }
 }
 
 @media screen and (max-width: 375px) {
+  .container--footer,
   .container--details {
-    padding: var(--size-sm-1);
+    padding: var(--size-sm-2);
     text-align: center;
   }
 }
