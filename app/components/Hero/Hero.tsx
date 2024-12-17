@@ -1,6 +1,7 @@
-import { StaticImageData } from "next/image";
-import styles from "./hero.module.css";
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
+
+import styles from "./hero.module.css";
 import Link from "next/link";
 
 export type link = {
