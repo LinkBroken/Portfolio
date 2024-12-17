@@ -57,7 +57,9 @@
   .container {
     grid-template-columns: 1fr;
     place-content: center;
-    background-image: url("https://s3-alpha-sig.figma.com/img/ecd8/88c5/db9f58415906487e880f6e484d0661e3?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YsCqyYBPthBmr148WkNUVhrj7HKMPyIoru39qDe9Nj1G95B4KNrC7Oa6OryeRf8kECWeN6O~HzXz1~7qYx9OxVt~J6ik23RetDRE0gHU93h9QS1u3lodR4E~sT4-OYNRb9UrUb9vRKnmSZ98ICOKrGsrZFtiZnyvmV8wHKhYlOJrh9zZmeXufBL2nD3IypNwBJzdruLE1Vzf9660n9XISI9RlF3J3oz5xDL1EyKxhdU~9LVpe9qM6F~V93mHuu2szUIFivNnBsSDAa7nhSV4d1vwRLtNJKhGpOcusbtvjGRGBaNXSaacjU5U0RxxZEq27iK8mgzo7wlAHG4DjADSag__");
+    background-image: url("../../../assets/hero-3.jpg");
+    background-size: cover;
+    animation: changeBackground 10s linear infinite 1s;
   }
   .name {
     margin-bottom: 0;
@@ -71,9 +73,29 @@
     color: var(--color-white);
     padding: var(--size-md-1) var(--size-sm-2);
     text-align: center;
-    /* gap: var(--size-sm-); */
   }
+
+  .details {
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    background: #000000b5;
+  }
+
   .greeting {
     margin-bottom: var(--size-sm-1);
+  }
+}
+
+@keyframes changeBackground {
+  30% {
+    background-image: url("../../../assets/hero-2.jpg");
+  }
+
+  60% {
+    background-image: url("../../../assets/hero-3.jpg");
+  }
+  100% {
+    background-image: url("../../../assets/hero-1.jpg");
   }
 }
