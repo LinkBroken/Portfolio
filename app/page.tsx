@@ -34,7 +34,7 @@ const heroProps = {
 };
 
 const footerProps = {
-  title: "IT BERRIES",
+  title: "Garbage",
   description:
     "Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est. Morbi commodo, eros in dignissim tempus, lacus odio rutrum augue, in semper sem magna quis tellus. Etiam enim erat, suscipit eu semper a, dictum sit amet elit. Nunc egestas nisi eget enim gravida facilisis. Pellentesque laoreet varius turpis vel pharetra. Ut ante justo, consequat vitae elementum tempor, accumsan nec eros. ",
 };
@@ -47,7 +47,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="landing">
+    <div id="app" className="landing">
       <Navbar {...navBarProps} /> <Hero {...heroProps} />
       <Footer variant="details" {...footerProps} />
       <div data-aos="fade-up" data-aos-duration="900">
@@ -59,8 +59,12 @@ export default function Home() {
           align="center"
           border
         />
-        <ContentBlock variant="about" information={informationLinks} />
-        <ContentBlock variant="skills" skills={skills} />
+        <ContentBlock
+          id="about"
+          variant="about"
+          information={informationLinks}
+        />
+        <ContentBlock id="skills" variant="skills" skills={skills} />
       </div>
       <div data-aos="fade-down" data-aos-duration="900">
         <Form fields={[...croppedLabel]} introText="Form" />
@@ -69,7 +73,7 @@ export default function Home() {
         variant="footer"
         copyright="@2020 Tomasz Gajda All Rights Reserved."
         socialLinks={links}
-        link={{ href: "#", label: "Back to Top" }}
+        link={{ href: "#app", label: "Back to Top" }}
       />
     </div>
   );

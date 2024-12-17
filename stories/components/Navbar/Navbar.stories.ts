@@ -16,9 +16,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const navLinks = [
-  { href: "#", label: "About me" },
-  { href: "#", label: "Skills" },
-  { href: "#", label: "Portfolio" },
+  { href: "#about", label: "About me" },
+  { href: "#skills", label: "Skills" },
+  { href: "#portfolio", label: "Portfolio" },
 ];
 
 export const Full: Story = {
