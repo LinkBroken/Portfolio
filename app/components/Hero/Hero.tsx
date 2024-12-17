@@ -32,9 +32,25 @@ export default function Hero({
       )}
       {(greeting || name || socialLinks || jobTitle) && (
         <div className={styles.details}>
-          {greeting && <p className={styles.greeting}>{greeting}</p>}
-          {name && <h1 className={styles.name}>{name}</h1>}
-          {jobTitle && <h3 className={styles.job}>{jobTitle}</h3>}
+          {greeting && (
+            <p
+              className={styles.greeting}
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              {greeting}
+            </p>
+          )}
+          {name && (
+            <h1 className={styles.name} data-aos="fade-up" data-aos-delay="600">
+              {name}
+            </h1>
+          )}
+          {jobTitle && (
+            <h3 className={styles.job} data-aos="fade-up" data-aos-delay="900">
+              {jobTitle}
+            </h3>
+          )}
           <ul className={styles.links}>
             {socialLinks?.map((link) => (
               <Link
