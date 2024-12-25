@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Form, { field } from "@/app/components/Form/Form";
+import { croppedLabel } from "@/app/data/pageProps";
 
 const meta = {
   title: "Components/Form",
@@ -21,24 +22,6 @@ export const fullLabel = [
   { type: "text", name: "name", border: "full" },
 ] as field[];
 
-export const croppedLabel = [
-  {
-    type: "text",
-    name: "Name",
-    border: "cropped",
-    required: true,
-  },
-  {
-    type: "number",
-    name: "Age",
-    border: "cropped",
-  },
-  {
-    type: "email",
-    name: "Email",
-    border: "cropped",
-  },
-] as field[];
 
 export const Full: Story = {
   args: {
