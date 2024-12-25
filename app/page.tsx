@@ -5,20 +5,21 @@ import Navbar from "./components/Navbar/Navbar";
 import "./styles/globals.css";
 import user from "@/assets/userImage.png";
 import logo from "@/assets/logo.svg";
+import aboutTeaserImage from "@/assets/about-image.jpg";
+
 import { navLinks } from "@/stories/components/Navbar/Navbar.stories";
 import Footer from "./components/Footer/Footer";
 import Title from "./components/Title/TItle";
-import { motion, useScroll, useSpring } from "framer-motion";
 import ContentBlock from "./components/ContentBlock/ContentBlock";
-import {
-  informationLinks,
-  skills,
-} from "@/stories/components/ContentBlock/ContentBlock.stories";
+import { skills } from "@/stories/components/ContentBlock/ContentBlock.stories";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Form from "./components/Form/Form";
 import { croppedLabel } from "@/stories/components/Form/Form.stories";
+import AboutTeaser from "./components/AboutTeaser/AboutTeaser";
+import { Bounce, ToastContainer } from "react-toastify";
+
 const navBarProps = {
   links: navLinks,
   logo: logo,
@@ -34,9 +35,15 @@ const heroProps = {
 };
 
 const footerProps = {
-  title: "Garbage",
+  title: "Web Dev Qoute",
   description:
-    "Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est. Morbi commodo, eros in dignissim tempus, lacus odio rutrum augue, in semper sem magna quis tellus. Etiam enim erat, suscipit eu semper a, dictum sit amet elit. Nunc egestas nisi eget enim gravida facilisis. Pellentesque laoreet varius turpis vel pharetra. Ut ante justo, consequat vitae elementum tempor, accumsan nec eros. ",
+    "Build the web, one line of code at a time. ",
+};
+
+const aboutTeaserProps = {
+  image: aboutTeaserImage,
+  description:
+    "I am an aspiring Front-End Developer with a strong passion for creating user-friendly and engaging web experiences. I possess a solid foundation in core web technologies such as HTML, CSS, and JavaScript, and I am eager to learn and grow within a dynamic team environment. I am a highly motivated and quick learner, always seeking new challenges and opportunities to expand my skills and contribute to innovative projects.",
 };
 
 export default function Home() {
@@ -48,6 +55,19 @@ export default function Home() {
 
   return (
     <div id="app" className="landing">
+       <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
       <Navbar {...navBarProps} /> <Hero {...heroProps} />
       <Footer variant="details" {...footerProps} />
       <div data-aos="fade-up" data-aos-duration="900">
@@ -59,10 +79,15 @@ export default function Home() {
           align="center"
           border
         />
-        <ContentBlock
-          id="about"
-          variant="about"
-          information={informationLinks}
+        <AboutTeaser {...aboutTeaserProps} />
+
+        <Title
+          containerPadding
+          titlePadding
+          size="large"
+          label="Skills"
+          align="center"
+          border
         />
         <ContentBlock id="skills" variant="skills" skills={skills} />
       </div>
