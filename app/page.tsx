@@ -92,7 +92,7 @@ export default function Home() {
         <ContentBlock id="skills" variant="skills" skills={skills} />
       </div>
       <div data-aos="fade-down" data-aos-duration="900">
-        <Form fields={[...croppedLabel]} introText="Form" />
+        <Form fields={[...croppedLabel]} introText="Contact" />
       </div>
       <Footer
         variant="footer"
