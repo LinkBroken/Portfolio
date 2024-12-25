@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import classNames from "classnames";
 
 import styles from "./content-block.module.css";
@@ -8,13 +9,8 @@ type skill = {
   image: string;
 };
 
-type info = {
-  title: string;
-  description: string;
-};
 interface ContentBlockProps {
   variant: "about" | "skills";
-  information?: info[];
   skills?: skill[];
   id?: string;
 }
@@ -22,7 +18,6 @@ interface ContentBlockProps {
 export default function ContentBlock({
   variant,
   skills,
-  information,
   id,
 }: ContentBlockProps) {
   return (
@@ -30,30 +25,6 @@ export default function ContentBlock({
       id={id}
       className={classNames(styles.container, styles[`container--${variant}`])}
     >
-      {information &&
-        information?.map((detail) => (
-          <div key={detail.title} className={styles.infoCard}>
-            <Title
-              label={detail.title}
-              key={detail.description}
-              border={false}
-              align="left"
-              size="medium"
-              containerPadding={false}
-              titlePadding={false}
-              data-aos="fade-up"
-              data-aos-delay="900"
-            />
-            <p
-              className={styles.description}
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              {detail.description}
-            </p>
-          </div>
-        ))}
-
       {skills &&
         skills.map((skill) => (
           <div key={skill.name} className={styles.skillCard}>

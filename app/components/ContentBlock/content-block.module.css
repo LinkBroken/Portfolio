@@ -14,28 +14,16 @@
   margin: 0 auto;
   place-content: center;
   padding: var(--size-lg-1);
+  place-items: center;
 }
 
-.infoCard,
 .skillCard {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: var(--size-sm-2);
   word-break: break-all;
-}
-
-.skillCard {
   min-width: fit-content;
-}
-
-.infoCard {
-  align-items: flex-start;
-  max-width: 40%;
-}
-
-.skillCard {
   align-items: center;
-  flex-direction: column-reverse;
 }
 
 .description {
@@ -45,8 +33,8 @@
 }
 
 .image {
-  width: 84px;
-  height: 100px;
+  width: 8.4rem;
+  height: auto;
 }
 
 @media screen and (max-width: 1024px) {

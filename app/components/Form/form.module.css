@@ -21,6 +21,7 @@
   border-color: var(--color-beige);
   border-style: solid;
   border-width: 2px;
+  background-color: transparent;
 }
 
 .input--cropped {
@@ -35,9 +36,18 @@
   color: var(--color-white);
   border-radius: 10px;
   align-self: flex-start;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
   &:hover {
-    background-color: rgb(50, 125, 50);
+    background-color: var(--color-hover-btn);
   }
+}
+
+.contact__formField {
+   display: flex;
+   flex-direction: column;
+   gap: var(--size-sm-2);
 }
 
 @media screen and (max-width: 1024px) {
