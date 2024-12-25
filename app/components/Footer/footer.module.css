@@ -67,12 +67,12 @@
   }
 
   .description {
-    font-size: var(--font-sm-2);
+    font-size: var(--font-md);
     text-align: left;
     padding: var(--size-sm-2);
     word-break: break-all;
-    word-spacing: 0.4rem;
-    letter-spacing: 0.5rem;
+    /* word-spacing: 0.4rem; */
+    /* letter-spacing: 0.5rem; */
   }
 }
 
