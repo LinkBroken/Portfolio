@@ -15,9 +15,14 @@ import Form from "./components/Form/Form";
 import AboutTeaser from "./components/AboutTeaser/AboutTeaser";
 
 import { Bounce, ToastContainer } from "react-toastify";
-import { aboutTeaserProps, croppedLabel, footerProps, heroProps, links, navBarProps } from "./data/pageProps";
-
-
+import {
+  aboutTeaserProps,
+  footerProps,
+  heroProps,
+  links,
+  navBarProps,
+} from "./data/pageProps";
+import Portfolio from "./components/Portfolio/Portfolio";
 
 export default function Home() {
   useEffect(() => {
@@ -26,11 +31,11 @@ export default function Home() {
     });
   }, []);
 
-  const yearNow = new Date().getFullYear()
+  const yearNow = new Date().getFullYear();
 
   return (
     <div id="app" className="landing">
-       <ToastContainer
+      <ToastContainer
         position="top-center"
         autoClose={5000}
         hideProgressBar={false}
@@ -66,8 +71,9 @@ export default function Home() {
         />
         <ContentBlock id="skills" variant="skills" skills={skills} />
       </div>
+      <Portfolio />
       <div data-aos="fade-down" data-aos-duration="900">
-        <Form fields={[...croppedLabel]} introText="Contact" />
+        <Form introText="Contact" />
       </div>
       <Footer
         variant="footer"

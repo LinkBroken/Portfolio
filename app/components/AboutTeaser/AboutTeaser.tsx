@@ -9,7 +9,7 @@ interface AboutTeaserProps {
 
 const AboutTeaser = ({ image, description }: AboutTeaserProps) => {
   return (
-    <div className={styles.container}>
+    <section id="about" className={styles.container}>
       <Image
         src={image}
         alt="About me"
@@ -21,7 +21,7 @@ const AboutTeaser = ({ image, description }: AboutTeaserProps) => {
       <p className={styles.description} data-aos="zoom-in-left">
         {description}
       </p>
-    </div>
+    </section>
   );
 };
 

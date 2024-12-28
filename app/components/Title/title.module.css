@@ -19,6 +19,11 @@
   padding: 1rem;
 }
 
+.title--white {
+  color: white;
+  border-color: white;
+}
+
 .titel--nopadding {
   padding: 0;
 }
