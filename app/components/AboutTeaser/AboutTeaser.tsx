@@ -5,9 +5,10 @@ import styles from "./about-teaser.module.css";
 interface AboutTeaserProps {
   image: string | StaticImageData;
   description: string;
+  author?: string;
 }
 
-const AboutTeaser = ({ image, description }: AboutTeaserProps) => {
+const AboutTeaser = ({ image, description, author }: AboutTeaserProps) => {
   return (
     <section id="about" className={styles.container}>
       <Image
@@ -20,6 +21,7 @@ const AboutTeaser = ({ image, description }: AboutTeaserProps) => {
       />
       <p className={styles.description} data-aos="zoom-in-left">
         {description}
+        <span className={styles.author}> {author}</span>
       </p>
     </section>
   );
