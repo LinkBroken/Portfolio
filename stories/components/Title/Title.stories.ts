@@ -20,6 +20,8 @@ export const Center: Story = {
     label: "Skills",
     size: "large",
     border: true,
+    titlePadding: true,
+    containerPadding: true,
   },
 };
 
@@ -29,6 +31,8 @@ export const Left: Story = {
     label: "About me",
     size: "medium",
     border: false,
+    titlePadding: false,
+    containerPadding: false,
   },
 };
 
@@ -38,5 +42,7 @@ export const Right: Story = {
     label: "About me",
     size: "small",
     border: true,
+    titlePadding: true,
+    containerPadding: true,
   },
 };

@@ -10,7 +10,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Title from "./components/Title/TItle";
 import ContentBlock from "./components/ContentBlock/ContentBlock";
-import { skills } from "@/stories/components/ContentBlock/ContentBlock.stories";
 import Form from "./components/Form/Form";
 import AboutTeaser from "./components/AboutTeaser/AboutTeaser";
 
@@ -21,6 +20,7 @@ import {
   heroProps,
   links,
   navBarProps,
+  skills,
 } from "./data/pageProps";
 import Portfolio from "./components/Portfolio/Portfolio";
 

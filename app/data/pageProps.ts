@@ -2,7 +2,11 @@ import user from "@/assets/userImage.png";
 import logo from "@/assets/logo.svg";
 import aboutTeaserImage from "@/assets/about-image.jpg";
 
-import { navLinks } from "@/stories/components/Navbar/Navbar.stories";
+export const navLinks = [
+  { href: "#about", label: "About me" },
+  { href: "#skills", label: "Skills" },
+  { href: "#portfolio", label: "Portfolio" },
+];
 
 export const links = [
   {
@@ -40,3 +44,45 @@ export const aboutTeaserProps = {
     "I am an aspiring Front-End Developer with a strong passion for creating user-friendly and engaging web experiences. I possess a solid foundation in core web technologies such as HTML, CSS, and JavaScript, and I am eager to learn and grow within a dynamic team environment. I am a highly motivated and quick learner, always seeking new challenges and opportunities to expand my skills and contribute to innovative projects.",
   author: "Omer Damour",
 };
+
+export const skills = [
+  {
+    name: "JAVASCRIPT",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+  },
+  {
+    name: "HTML5",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7OHaxH3qOclxT0KxO8uuAHtoXpFX5Xr2nXeluEaGdc5LCf3XscrKcmAM0M-wgqQ4k3tI&usqp=CAU",
+  },
+  {
+    name: "CSS3",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Official_CSS_Logo.svg/2048px-Official_CSS_Logo.svg.png",
+  },
+  {
+    name: "SASS",
+    image:
+      "https://cdn.iconscout.com/icon/free/png-256/free-sass-logo-icon-download-in-svg-png-gif-file-formats--brand-development-tools-pack-logos-icons-226054.png?f=webp&w=256",
+  },
+  {
+    name: "Nextjs",
+    image: "https://theme-next.js.org/images/logo.svg",
+  },
+  {
+    name: "Reactjs",
+    image:
+      "https://seeklogo.com/images/R/react-logo-65B7CD91B5-seeklogo.com.png",
+  },
+  {
+    name: "Git",
+    image:
+      "https://cdn.iconscout.com/icon/free/png-256/free-git-logo-icon-download-in-svg-png-gif-file-formats--brand-development-tools-pack-logos-icons-225996.png?f=webp&w=256",
+  },
+  {
+    name: "Typescript",
+    image:
+      "https://cdn.iconscout.com/icon/free/png-256/free-typescript-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-7-pack-logos-icons-2945272.png?f=webp&w=256",
+  },
+];

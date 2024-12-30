@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import Navbar from "@/app/components/Navbar/Navbar";
 import logo from "@/assets/logo.svg";
+import { navLinks } from "@/app/data/pageProps";
 
 const meta = {
   title: "Components/Navbar",
@@ -15,12 +16,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const navLinks = [
-  { href: "#about", label: "About me" },
-  { href: "#skills", label: "Skills" },
-  { href: "#portfolio", label: "Portfolio" },
-];
-
 export const Full: Story = {
   args: {
     links: navLinks,
@@ -29,14 +24,14 @@ export const Full: Story = {
   },
 };
 
-export const withLinksOnly: Story = {
+export const WithLinksOnly: Story = {
   args: {
     links: navLinks,
     linksOnly: true,
   },
 };
 
-export const withLogoOnly: Story = {
+export const WithLogoOnly: Story = {
   args: {
     logo: logo,
     logoAlt: "Logo Alt",

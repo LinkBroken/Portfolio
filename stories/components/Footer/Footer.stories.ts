@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Footer from "@/app/components/Footer/Footer";
-import { links } from "../Hero/Hero.stories";
+import { links } from "@/app/data/pageProps";
 
 const meta = {
   title: "Components/Footer",
@@ -25,7 +25,7 @@ export const Details: Story = {
   },
 };
 
-export const footer: Story = {
+export const FooterStory: Story = {
   args: {
     variant: "footer",
     copyright: "@2020 Tomasz Gajda All Rights Reserved.",
