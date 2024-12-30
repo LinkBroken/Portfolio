@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
 import styles from "./portfolio.module.css";
@@ -9,7 +10,7 @@ export default function WorkItem({ project }: { project: Project }) {
       <img src={project.image} alt={project.title} className={styles.image} />
       <div className={styles.content}>
         <h3 className={styles.title}>{project.title}</h3>
-        <p className={styles.description}>{project.description}</p>
+        <p>{project.description}</p>
       </div>
     </Link>
   );
