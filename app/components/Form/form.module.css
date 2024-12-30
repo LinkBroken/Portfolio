@@ -56,8 +56,15 @@
   .section {
     padding: var(--size-md-1);
   }
+  .form {
+    align-items: flex-start;
+  }
   .input {
+    padding: var(--size-sm-1);
     width: 40rem;
+  }
+  .button {
+    padding: var(--size-sm-2);
   }
 }
 
@@ -67,7 +74,7 @@
     padding: var(--size-sm-2);
   }
   .input {
-    width: 30rem;
+    width: 20rem;
   }
 }
 
@@ -77,6 +84,6 @@
     padding: var(--size-sm-1);
   }
   .input {
-    width: 20rem;
+    width: 10rem;
   }
 }

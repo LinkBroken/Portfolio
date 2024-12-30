@@ -73,3 +73,8 @@ export default function Form({ introText }: FormProps) {
     </section>
   );
 }
+
+// Form fields sizes on mobile screen
+//spaces between portfolio images
+//button is too small in comparison to the other elements
+// Portfolio images not looking good
