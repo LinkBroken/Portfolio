@@ -1,11 +1,12 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 1rem;
   /* padding: 1rem; */
   margin-top: 3rem;
+  padding: 20px;
 }
 
 .image {
@@ -14,6 +15,7 @@
   border-radius: 2rem;
   object-fit: cover;
   object-position: center;
+  box-shadow: 0px 1px 2px rgb(231, 231, 231);
 }
 
 .description {
