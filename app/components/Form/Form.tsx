@@ -2,7 +2,7 @@
 
 import styles from "./form.module.css";
 import Title from "../Title/TItle";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useEmailSender } from "@/app/hooks/useEmailSender";
 

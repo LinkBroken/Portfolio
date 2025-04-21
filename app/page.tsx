@@ -27,7 +27,7 @@ import Portfolio from "./components/Portfolio/Portfolio";
 export default function Home() {
   useEffect(() => {
     Aos.init({
-      offset: 100,
+      // offset: 100,
     });
   }, []);
 
@@ -45,12 +45,16 @@ export default function Home() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
         transition={Bounce}
       />
-      <Navbar {...navBarProps} /> <Hero {...heroProps} />
+      <div data-aos="zoom-out" data-aos-duration="900">
+        <Navbar {...navBarProps} />
+      </div>
+      <div data-aos="zoom-out" data-aos-duration="1800">
+        <Hero {...heroProps} />
+      </div>
       <Footer variant="details" {...footerProps} />
-      <div data-aos="fade-up" data-aos-duration="900">
+      <div data-aos="zoom-in" data-aos-duration="900">
         <Title
           containerPadding
           titlePadding
@@ -72,7 +76,7 @@ export default function Home() {
         <ContentBlock id="skills" variant="skills" skills={skills} />
       </div>
       <Portfolio />
-      <div data-aos="fade-down" data-aos-duration="900">
+      <div data-aos="zoom-out" data-aos-duration="900">
         <Form introText="Contact" />
       </div>
       <Footer

@@ -8,7 +8,7 @@ interface TitleProps {
   titlePadding: boolean;
   size: "small" | "medium" | "large";
   align: "left" | "right" | "center";
-  color?: 'default' | 'white';
+  color?: "default" | "white";
 }
 
 export default function Title({
@@ -18,7 +18,7 @@ export default function Title({
   label,
   size,
   border,
-  color='default'
+  color = "default",
 }: TitleProps) {
   return (
     <div
@@ -33,7 +33,7 @@ export default function Title({
           [styles[`title--${size}`]]: size,
           [styles[`title--${color}`]]: color,
           [styles[`title--${align}`]]: align,
-          [styles[`title--${border ? "border" : "borderless "}`]]: border,
+          [styles[`title--${!border ? "border" : "borderless "}`]]: border,
           [styles[`title--${titlePadding ? "padding" : "nopadding "}`]]:
             titlePadding,
         })}

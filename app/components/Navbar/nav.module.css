@@ -54,7 +54,7 @@
     font-size: var(--size-sm-1);
   }
   .burgerMenu--open {
-    stroke: rgb(255, 0, 0);
+    stroke: var(--color-primary3);
   }
 }
 

@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Poetsen_One } from "next/font/google";
+
 import "./styles/globals.css";
 import { Bounce, ToastContainer } from "react-toastify";
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+
+const poetsenOne = Poetsen_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-poetsen-one",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
+
 
 export const metadata: Metadata = {
   title: "Omer Portfolio",
@@ -27,23 +27,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${poetsenOne.variable}  antialiased`}>
         {children}
         <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        transition={Bounce}
-      />
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
       </body>
     </html>
   );

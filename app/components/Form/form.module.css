@@ -25,6 +25,11 @@
   font-size: var(--font-md);
 }
 
+.input:focus {
+  border-color: rgb(142, 212, 235);
+  background-color: var(--color-white);
+}
+
 .input--cropped {
   border-top: none;
   border-right: none;

@@ -41,7 +41,7 @@ export const footerProps = {
 export const aboutTeaserProps = {
   image: aboutTeaserImage,
   description:
-    "I am an aspiring Front-End Developer with a strong passion for creating user-friendly and engaging web experiences. I possess a solid foundation in core web technologies such as HTML, CSS, and JavaScript, and I am eager to learn and grow within a dynamic team environment. I am a highly motivated and quick learner, always seeking new challenges and opportunities to expand my skills and contribute to innovative projects.",
+    "I am a Front-End Developer with a strong passion for creating user-friendly and engaging web experiences. I possess a solid foundation in core web technologies such as HTML, CSS, and JavaScript, and I am eager to learn and grow within a dynamic team environment. I am a highly motivated and quick learner, always seeking new challenges and opportunities to expand my skills and contribute to innovative projects.",
   author: "Omer Damour",
 };
 
