@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Poetsen_One } from "next/font/google";
 
 import "./styles/globals.css";
@@ -10,8 +9,6 @@ const poetsenOne = Poetsen_One({
   subsets: ["latin"],
   variable: "--font-poetsen-one",
 });
-
-
 
 export const metadata: Metadata = {
   title: "Omer Portfolio",
