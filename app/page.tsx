@@ -23,6 +23,7 @@ import {
   skills,
 } from "./data/pageProps";
 import Portfolio from "./components/Portfolio/Portfolio";
+import Loader from "./components/loader/Loader";
 
 export default function Home() {
   useEffect(() => {
@@ -54,7 +55,7 @@ export default function Home() {
         <Hero {...heroProps} />
       </div>
       <Footer variant="details" {...footerProps} />
-      <div data-aos="zoom-in" data-aos-duration="900">
+      <div data-aos="zoom-in" data-aos-duration="1100">
         <Title
           containerPadding
           titlePadding
@@ -76,7 +77,7 @@ export default function Home() {
         <ContentBlock id="skills" variant="skills" skills={skills} />
       </div>
       <Portfolio />
-      <div data-aos="zoom-out" data-aos-duration="900">
+      <div data-aos="fade-out" data-aos-duration="200">
         <Form introText="Contact" />
       </div>
       <Footer

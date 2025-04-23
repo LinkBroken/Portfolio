@@ -7,6 +7,7 @@ import React from "react";
 import { useEmailSender } from "@/app/hooks/useEmailSender";
 
 import classNames from "classnames";
+import Loader from "../loader/Loader";
 
 interface FormProps {
   introText?: string;
@@ -66,7 +67,7 @@ export default function Form({ introText }: FormProps) {
           />
         </div>
         <button className={styles.button} disabled={isSubmitting}>
-          {isSubmitting ? "Submitting..." : "Submit"}
+          {isSubmitting ? <Loader /> : "Submit"}
         </button>
       </form>
       ;

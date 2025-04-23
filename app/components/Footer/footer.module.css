@@ -3,6 +3,7 @@
   flex-direction: column;
   color: var(--color-white);
   padding: var(--size-md-1);
+  font-size: large;
 }
 
 .container--details {

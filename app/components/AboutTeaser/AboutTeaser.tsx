@@ -18,6 +18,7 @@ const AboutTeaser = ({ image, description, author }: AboutTeaserProps) => {
         height={500}
         className={styles.image}
         data-aos="zoom-in-right"
+        data-aos-duration="2500"
       />
       <p className={styles.description} data-aos="zoom-in-left">
         {description}
