@@ -23,7 +23,6 @@ import {
   skills,
 } from "./data/pageProps";
 import Portfolio from "./components/Portfolio/Portfolio";
-import Loader from "./components/loader/Loader";
 
 export default function Home() {
   useEffect(() => {
