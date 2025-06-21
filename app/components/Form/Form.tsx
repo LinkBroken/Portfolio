@@ -70,7 +70,6 @@ export default function Form({ introText }: FormProps) {
           {isSubmitting ? <Loader /> : "Submit"}
         </button>
       </form>
-      ;
     </section>
   );
 }
