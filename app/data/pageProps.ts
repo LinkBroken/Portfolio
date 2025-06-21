@@ -46,21 +46,7 @@ export const aboutTeaserProps = {
 };
 
 export const skills = [
-  {
-    name: "JAVASCRIPT",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-  },
-  {
-    name: "HTML5",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7OHaxH3qOclxT0KxO8uuAHtoXpFX5Xr2nXeluEaGdc5LCf3XscrKcmAM0M-wgqQ4k3tI&usqp=CAU",
-  },
-  {
-    name: "CSS3",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Official_CSS_Logo.svg/2048px-Official_CSS_Logo.svg.png",
-  },
+
   {
     name: "SASS",
     image:
