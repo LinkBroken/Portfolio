@@ -51,21 +51,20 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
         <Container id="skills" maxWidth="lg" sx={{ py: 10 }}>
             <Grid container spacing={6}>
                 {/* Proficiency Visualization */}
-                <Grid size={{ xs: 12, lg: 5 }}>
+                <Grid size={{ xs: 12, lg: 4.5 }} sx={{ position: { lg: 'sticky' }, top: '2rem', height: 'fit-content' }}>
                     <Paper
                         elevation={0}
                         sx={{
-                            p: 4,
+                            p: 3,
                             borderRadius: 4,
                             bgcolor: alpha(theme.palette.primary.main, 0.03),
                             border: `1px solid ${theme.palette.divider}`,
-                            height: '100%',
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'center'
                         }}
                     >
-                        <Box sx={{ mb: 4 }}>
+                        <Box sx={{ mb: 2 }}>
                             <Typography variant="h5" fontWeight={800} gutterBottom>
                                 Expertise Radar
                             </Typography>
@@ -74,7 +73,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                             </Typography>
                         </Box>
 
-                        <Box sx={{ width: '100%', height: 350 }}>
+                        <Box sx={{ width: '100%', height: 300 }}>
                             <ResponsiveContainer width="100%" height="100%">
                                 <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
                                     <PolarGrid stroke={theme.palette.divider} />
@@ -97,7 +96,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                 </Grid>
 
                 {/* Skill Lists */}
-                <Grid size={{ xs: 12, lg: 7 }}>
+                <Grid size={{ xs: 12, lg: 7.5 }}>
                     {/* Technical Toolkit */}
                     <Box sx={{ mb: 6 }}>
                         <Typography variant="h5" fontWeight={800} gutterBottom sx={{ mb: 3 }}>
@@ -141,7 +140,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                                             <Typography variant="body2" fontWeight={800} sx={{ mb: 0.5, lineHeight: 1.2 }}>
                                                 {skill.name}
                                             </Typography>
-                                            <Chip
+                                            {/* <Chip
                                                 label={skill.level}
                                                 size="small"
                                                 color={skill.level === 'Strong' ? 'primary' : 'default'}
@@ -150,7 +149,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                                                     height: 22,
                                                     fontWeight: 800
                                                 }}
-                                            />
+                                            /> */}
                                         </Card>
                                     </Tooltip>
                                 </Grid>

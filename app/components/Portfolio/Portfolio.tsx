@@ -11,6 +11,9 @@ import { myProjects } from "@/app/data/work";
 import WorkItem from "./WorkItem";
 
 export default function Portfolio() {
+  const webProjects = myProjects?.filter(p => p.category === 'web');
+  const mobileProjects = myProjects?.filter(p => p.category === 'mobile');
+
   return (
     <Box
       id="portfolio"
@@ -27,10 +30,26 @@ export default function Portfolio() {
           fontWeight={900}
           sx={{ mb: 8 }}
         >
-          Selected Works
+          Selected Web Works
+        </Typography>
+        <Grid container spacing={4} sx={{ mb: 10 }}>
+          {webProjects?.map((project) => (
+            <Grid key={project.title} size={{ xs: 12, sm: 6, lg: 4 }}>
+              <WorkItem project={project} />
+            </Grid>
+          ))}
+        </Grid>
+
+        <Typography
+          variant="h2"
+          align="center"
+          fontWeight={900}
+          sx={{ mb: 8 }}
+        >
+          Mobile Apps
         </Typography>
         <Grid container spacing={4}>
-          {myProjects?.map((project) => (
+          {mobileProjects?.map((project) => (
             <Grid key={project.title} size={{ xs: 12, sm: 6, lg: 4 }}>
               <WorkItem project={project} />
             </Grid>
