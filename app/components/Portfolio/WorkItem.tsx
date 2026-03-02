@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 import { X as CloseIcon } from "lucide-react";
 import { Project } from "@/app/data/work";
+import Image from "next/image";
 
 export default function WorkItem({ project }: { project: Project }) {
   const theme = useTheme();
@@ -132,9 +133,9 @@ export default function WorkItem({ project }: { project: Project }) {
           <Grid container>
             <Grid size={{ xs: 12, md: 6 }}>
               <Box sx={{ height: { xs: 400, md: 600 }, overflowY: 'auto', bgcolor: 'rgba(0,0,0,0.05)' }}>
-                <img
-                  src={project.image}
-                  alt={project.title}
+                <Image
+                  src={project.image || '/placeholder.png'}
+                  alt={project.title || ''}
                   style={{
                     width: '100%',
                     height: 'auto',

@@ -7,7 +7,6 @@ import {
     Container,
     Grid,
     Card,
-    Chip,
     useTheme,
     alpha,
     Tooltip,
@@ -23,6 +22,7 @@ import {
     ResponsiveContainer
 } from 'recharts';
 import { Skill } from '@/app/data/pageProps';
+import Image from 'next/image';
 
 interface SkillsSectionProps {
     skills: Skill[];
@@ -131,7 +131,8 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                                                 alignItems: 'center',
                                                 justifyContent: 'center'
                                             }}>
-                                                <img
+                                                <Image
+
                                                     src={skill.image}
                                                     alt={skill.name}
                                                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
@@ -187,7 +188,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                                             alignItems: 'center',
                                             justifyContent: 'center'
                                         }}>
-                                            <img
+                                            <Image
                                                 src={skill.image}
                                                 alt={skill.name}
                                                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
