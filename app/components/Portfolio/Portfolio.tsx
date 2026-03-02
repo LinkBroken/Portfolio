@@ -1,28 +1,42 @@
-import React from "react";
+'use client';
 
+import React from "react";
+import {
+  Box,
+  Typography,
+  Container,
+  Grid
+} from "@mui/material";
 import { myProjects } from "@/app/data/work";
 import WorkItem from "./WorkItem";
-import Title from "../Title/TItle";
-
-import styles from "./portfolio.module.css";
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className={styles.section}>
-      <Title
-        align="center"
-        titlePadding
-        size="large"
-        label="Portfolio"
-        border={false}
-        color="white"
-        containerPadding={false}
-      />
-      <div className={styles.container}>
-        {myProjects?.map((project) => (
-          <WorkItem project={project} key={project.title} />
-        ))}
-      </div>
-    </section>
+    <Box
+      id="portfolio"
+      component="section"
+      sx={{
+        py: { xs: 8, md: 15 },
+        bgcolor: 'background.default'
+      }}
+    >
+      <Container maxWidth="lg">
+        <Typography
+          variant="h2"
+          align="center"
+          fontWeight={900}
+          sx={{ mb: 8 }}
+        >
+          Selected Works
+        </Typography>
+        <Grid container spacing={4}>
+          {myProjects?.map((project) => (
+            <Grid key={project.title} size={{ xs: 12, sm: 6, lg: 4 }}>
+              <WorkItem project={project} />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box>
   );
 }

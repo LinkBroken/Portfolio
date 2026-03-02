@@ -1,80 +1,132 @@
-"use client";
+'use client';
 
-import styles from "./form.module.css";
-import Title from "../Title/TItle";
 import React from "react";
-
+import {
+  Box,
+  Typography,
+  Container,
+  TextField,
+  Button,
+  Paper,
+  Stack,
+  alpha,
+  useTheme
+} from "@mui/material";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Send as SendIcon } from "lucide-react";
 import { useEmailSender } from "@/app/hooks/useEmailSender";
-
-import classNames from "classnames";
 import Loader from "../loader/Loader";
+
+// Define Zod schema for form validation
+const contactSchema = z.object({
+  from_name: z.string().min(2, { message: "Name must be at least 2 characters" }),
+  reply_to: z.string().email({ message: "Please enter a valid email address" }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 interface FormProps {
   introText?: string;
 }
 
 export default function Form({ introText }: FormProps) {
-  const { handleChangeMessage, isSubmitting, onSubmit, toSend } =
-    useEmailSender();
+  const theme = useTheme();
+  const { isSubmitting, sendEmail } = useEmailSender();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const handleFormSubmit = async (data: ContactFormData) => {
+    const success = await sendEmail(data);
+    if (success) {
+      reset();
+    }
+  };
 
   return (
-    <section className={styles.section}>
-      {introText && (
-        <Title
-          titlePadding
-          size="large"
-          border
-          align="center"
-          label={introText}
-          containerPadding
-        />
-      )}
-      <form className={styles.form} onSubmit={onSubmit}>
-        <div className={styles.contact__formField}>
-          <label htmlFor="name">Name</label>
-          <input
-            required
-            className={classNames(styles.input, styles["input--cropped"])}
-            id="name"
-            type="text"
-            name="from_name"
-            value={toSend.from_name}
-            onChange={handleChangeMessage}
-          />
-        </div>
-        <div className={styles.contact__formField}>
-          <label htmlFor="name">email</label>
-          <input
-            required
-            className={classNames(styles.input, styles["input--cropped"])}
-            id="email"
-            type="email"
-            name="reply_to"
-            value={toSend.reply_to}
-            onChange={handleChangeMessage}
-          />
-        </div>
-        <div className={styles.contact__formField}>
-          <label htmlFor="msg">Your Message</label>
-          <textarea
-            required
-            rows={5}
-            className={classNames(styles.input, styles["input--cropped"])}
-            id="msg"
-            name="message"
-            value={toSend.message}
-            onChange={handleChangeMessage}
-          />
-        </div>
-        <button className={styles.button} disabled={isSubmitting}>
-          {isSubmitting ? <Loader /> : "Submit"}
-        </button>
-      </form>
-    </section>
+    <Box component="section" sx={{ py: 10, bgcolor: 'background.default' }}>
+      <Container maxWidth="sm">
+        <Paper
+          elevation={0}
+          sx={{
+            p: { xs: 3, md: 5 },
+            borderRadius: 4,
+            border: `1px solid ${theme.palette.divider}`,
+            bgcolor: alpha(theme.palette.primary.main, 0.02)
+          }}
+        >
+          {introText && (
+            <Typography
+              variant="h3"
+              align="center"
+              fontWeight={800}
+              sx={{ mb: 4, color: 'primary.main' }}
+            >
+              {introText}
+            </Typography>
+          )}
+
+          <form onSubmit={handleSubmit(handleFormSubmit)}>
+            <Stack spacing={3}>
+              <TextField
+                fullWidth
+                label="Name"
+                variant="outlined"
+                {...register("from_name")}
+                error={!!errors.from_name}
+                helperText={errors.from_name?.message}
+                sx={{ bgcolor: 'background.paper' }}
+              />
+
+              <TextField
+                fullWidth
+                label="Email"
+                variant="outlined"
+                type="email"
+                {...register("reply_to")}
+                error={!!errors.reply_to}
+                helperText={errors.reply_to?.message}
+                sx={{ bgcolor: 'background.paper' }}
+              />
+
+              <TextField
+                fullWidth
+                label="Your Message"
+                variant="outlined"
+                multiline
+                rows={5}
+                {...register("message")}
+                error={!!errors.message}
+                helperText={errors.message?.message}
+                sx={{ bgcolor: 'background.paper' }}
+              />
+
+              <Button
+                type="submit"
+                variant="contained"
+                size="large"
+                disabled={isSubmitting}
+                endIcon={!isSubmitting && <SendIcon size={18} />}
+                sx={{
+                  py: 1.5,
+                  fontWeight: 700
+                }}
+              >
+                {isSubmitting ? <Loader /> : "Send Message"}
+              </Button>
+            </Stack>
+          </form>
+        </Paper>
+      </Container>
+    </Box>
   );
 }
-
-// Form fields sizes on mobile screen
-//spaces between portfolio images
-//button is too small in comparison to the other elements
-// Portfolio images not looking good

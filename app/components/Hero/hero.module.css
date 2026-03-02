@@ -10,7 +10,10 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   background: var(--color-bg-primary);
-  min-height: 100vh;
+  min-height: 85vh;
+  /* Reduced from 100vh for better initial viewport balance */
+  padding-block: 0;
+  /* Override global section padding to fix huge gap */
   transition: background-color var(--transition-base), border-color var(--transition-base);
   position: relative;
   overflow: hidden;
@@ -54,10 +57,10 @@
   align-items: flex-start;
   justify-content: center;
   margin: 0 auto;
-  padding: var(--spacing-lg) var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-md);
   width: 100%;
   max-width: 800px;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xs);
   position: relative;
   z-index: 10;
 }

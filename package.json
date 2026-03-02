@@ -23,6 +23,7 @@
     "@types/node": "^20.8.5",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
+    "@types/recharts": "^1.8.29",
     "eslint": "^8.57.0",
     "eslint-config-next": "15.0.3",
     "eslint-plugin-storybook": "^0.11.1",
@@ -30,6 +31,11 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@hookform/resolvers": "^5.2.2",
+    "@mui/icons-material": "^7.3.8",
+    "@mui/material": "^7.3.8",
     "aos": "^2.3.4",
     "classnames": "^2.5.1",
     "emailjs-com": "^3.2.0",
@@ -40,7 +46,10 @@
     "portfolio": "file:",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.71.2",
     "react-intersection-observer": "^9.13.1",
-    "react-toastify": "^11.0.2"
+    "react-toastify": "^11.0.2",
+    "recharts": "^3.7.0",
+    "zod": "^4.3.6"
   }
 }

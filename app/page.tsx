@@ -9,11 +9,11 @@ import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Title from "./components/Title/TItle";
-import ContentBlock from "./components/ContentBlock/ContentBlock";
 import Form from "./components/Form/Form";
 import AboutTeaser from "./components/AboutTeaser/AboutTeaser";
+import SkillsSection from "./components/Skills/SkillsSection";
 
-import { Bounce, ToastContainer } from "react-toastify";
+
 import {
   aboutTeaserProps,
   footerProps,
@@ -42,19 +42,7 @@ export default function Home() {
 
   return (
     <div id="app" ref={appRef} className="landing">
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        transition={Bounce}
-      />
+
       <div data-aos="zoom-out" data-aos-duration="900">
         <Navbar {...navBarProps} />
       </div>
@@ -73,15 +61,7 @@ export default function Home() {
         />
         <AboutTeaser {...aboutTeaserProps} />
 
-        <Title
-          containerPadding
-          titlePadding
-          size="large"
-          label="Skills"
-          align="center"
-          border
-        />
-        <ContentBlock id="skills" variant="skills" skills={skills} />
+        <SkillsSection skills={skills} />
       </div>
       <Portfolio />
       <div data-aos="fade-out" data-aos-duration="200">

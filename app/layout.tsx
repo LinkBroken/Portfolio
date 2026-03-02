@@ -22,19 +22,20 @@ export const metadata: Metadata = {
   description: "Passionate Software Engineer crafting elegant solutions with code. Explore my projects, skills, and journey in the world of software development.",
 };
 
+import MuiProvider from "./components/MuiProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-      
     <html lang="en">
-
       <body className={`${inter.variable} ${outfit.variable} antialiased`}>
         <ThemeProvider>
-          
-        {children}
+          <MuiProvider>
+            {children}
+          </MuiProvider>
         </ThemeProvider>
       </body>
     </html>

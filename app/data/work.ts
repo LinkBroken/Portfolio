@@ -5,6 +5,7 @@ import Image6 from "@/assets/Work/zurich.png";
 import Image7 from "@/assets/Work/pax.png";
 import Image8 from "@/assets/Work/migrosbank.png";
 import Image9 from "@/assets/Work/wwz.png";
+import MedLinkerImage from "@/assets/Work/medlinker-sa.png";
 
 export const Image = {
   src: Image1,
@@ -18,7 +19,12 @@ export interface Project {
 }
 
 export const myProjects: Project[] = [
-  
+  {
+    image: MedLinkerImage.src,
+    link: "https://www.medlinker-sa.com/",
+    description: "A comprehensive SaaS platform for medical institutions, streamlining operations and healthcare management.",
+    title: "MedLinker SaaS",
+  },
   {
     image: Image6.src,
     link: "https://zurich.ch",
