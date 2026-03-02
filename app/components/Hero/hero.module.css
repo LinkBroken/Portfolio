@@ -1,0 +1,240 @@
+/**
+ * Hero Section Styles
+ * 
+ * Premium hero section with theme support, smooth transitions,
+ * and enhanced micro-interactions.
+ */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background: var(--color-bg-primary);
+  min-height: 100vh;
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.stream,
+.bubbles {
+  display: none;
+  /* Removed decorative coffee elements */
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2;
+  grid-row: 1;
+  padding: var(--spacing-lg);
+  position: relative;
+  background: radial-gradient(circle at 50% 50%,
+      rgba(255, 255, 255, 0.03) 0%,
+      transparent 70%);
+}
+
+.imageContainer img {
+  max-width: 80%;
+  transition: transform var(--transition-base), filter var(--transition-base);
+  filter: grayscale(1) contrast(1.1);
+  opacity: 0.9;
+
+  &:hover {
+    transform: scale(1.02);
+    filter: grayscale(0) contrast(1);
+    opacity: 1;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+  width: 100%;
+  max-width: 800px;
+  gap: var(--spacing-sm);
+  position: relative;
+  z-index: 10;
+}
+
+.greeting {
+  font-family: var(--font-outfit);
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xs);
+  opacity: 0.8;
+}
+
+.name {
+  font-family: var(--font-outfit);
+  font-size: var(--font-3xl);
+  font-weight: var(--font-weight-black);
+  letter-spacing: var(--letter-spacing-tightest);
+  line-height: 0.9;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.job {
+  font-family: var(--font-outfit);
+  font-size: var(--font-xl);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-tighter);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--spacing-md);
+  line-height: var(--line-height-tight);
+}
+
+.links {
+  display: flex;
+  list-style-type: none;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.6rem;
+  height: 5.6rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+    transform: translateY(-4px);
+  }
+}
+
+.link>svg {
+  color: var(--color-text-primary);
+  transition: color var(--transition-fast);
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.link:hover>svg {
+  color: var(--color-bg-primary);
+}
+
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .imageContainer {
+    display: none;
+  }
+
+  .details {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .name {
+    font-size: var(--font-2xl);
+  }
+
+  .job {
+    font-size: var(--font-lg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    min-height: 100vh;
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .details {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .name {
+    font-size: var(--font-xl);
+  }
+
+  .job {
+    font-size: var(--font-md);
+  }
+
+  .links {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .name {
+    font-size: var(--font-lg);
+  }
+
+  .job {
+    font-size: var(--font-base);
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .container {
+    animation: none !important;
+  }
+
+  .details {
+    animation: none !important;
+  }
+
+  .greeting,
+  .name,
+  .job,
+  .links {
+    animation: none !important;
+  }
+
+  .link:hover {
+    transform: none;
+  }
+}

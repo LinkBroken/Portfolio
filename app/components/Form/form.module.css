@@ -1,0 +1,174 @@
+/**
+ * Form Styles
+ * 
+ * Contact form with theme support, smooth transitions,
+ * and enhanced input focus states.
+ */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-sm-3);
+  padding: var(--size-md-2);
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  background: var(--color-bg-primary);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-md-2);
+  align-items: center;
+  padding: var(--size-md-2);
+  width: 100%;
+}
+
+.contact__formField {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  gap: var(--size-sm-2);
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  max-width: 55rem;
+  padding: var(--size-sm-3);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font-size: var(--font-md);
+  font-family: inherit;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-primary);
+  box-shadow: 0 0 0 3px rgba(77, 180, 178, 0.1);
+}
+
+.input:active {
+  border-color: var(--color-primary);
+}
+
+.input--cropped {
+  border-top: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.button {
+  padding: var(--size-sm-2) var(--size-sm-3);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+  align-self: flex-start;
+  border: none;
+  font-weight: 600;
+  font-size: var(--font-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-0.2rem);
+  box-shadow: var(--shadow-md);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  background-color: var(--color-text-muted);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: var(--size-md-1);
+  }
+
+  .form {
+    align-items: flex-start;
+  }
+
+  .input {
+    max-width: 40rem;
+    padding: var(--size-sm-2);
+  }
+
+  .button {
+    padding: var(--size-sm-2) var(--size-sm-3);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section,
+  .form {
+    padding: var(--size-sm-2);
+  }
+
+  .input {
+    max-width: 100%;
+    font-size: var(--font-sm);
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .section,
+  .form {
+    padding: var(--size-sm-1);
+    gap: var(--size-sm-1);
+  }
+
+  .input {
+    padding: var(--size-sm-2);
+    font-size: var(--font-xs);
+  }
+
+  .button {
+    padding: var(--size-sm-1) var(--size-sm-2);
+    font-size: var(--font-xs);
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .button {
+    transition: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
+}

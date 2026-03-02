@@ -1,0 +1,177 @@
+/**
+ * Footer Styles
+ * 
+ * Premium footer with theme support, smooth transitions,
+ * and enhanced micro-interactions.
+ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-primary);
+  padding: var(--size-md-1);
+  font-size: var(--font-base);
+  background: var(--color-bg-primary);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.container--details {
+  align-items: flex-start;
+  background: var(--color-bg-secondary);
+  background-image: var(--desktop-background);
+  background-size: 50%;
+  background-position: 120%;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  gap: var(--font-sm);
+  position: relative;
+  transition:
+    background-color var(--transition-base),
+    box-shadow var(--transition-base);
+
+  /* Add subtle border */
+  border-top: 1px solid var(--color-border);
+}
+
+.container--footer {
+  align-items: center;
+  background: var(--color-bg-primary);
+  gap: var(--size-sm-1);
+  color: var(--color-text-primary);
+  padding: var(--size-md-1);
+  border-top: 1px solid var(--color-border);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.title {
+  font-size: var(--font-lg);
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: var(--size-sm-2);
+  transition: color var(--transition-base);
+}
+
+.description {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+  margin-bottom: var(--size-sm-3);
+  max-width: 600px;
+}
+
+.link::before {
+  content: "↗";
+  display: inline-block;
+  margin-right: var(--font-sm);
+  transition:
+    transform var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.link {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: var(--size-sm-2) var(--size-sm-3);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  display: inline-block;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    color var(--transition-fast);
+  font-weight: 500;
+  font-size: var(--font-sm);
+}
+
+.link:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-0.2rem);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.link:hover::before {
+  color: var(--color-white);
+  transform: translateX(0.2rem) translateY(-0.2rem);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media screen and (max-width: 768px) {
+  .container--details {
+    background-image: var(--mobile-background);
+    background-position: center;
+    background-size: 100%;
+    align-items: center;
+    padding: var(--size-sm-3);
+  }
+
+  .title {
+    font-size: var(--font-xl);
+    text-align: center;
+  }
+
+  .description {
+    font-size: var(--font-md);
+    text-align: center;
+    padding: var(--size-sm-2);
+    margin-bottom: var(--size-md-1);
+  }
+
+  .link {
+    padding: var(--size-sm-2) var(--size-sm-3);
+    font-size: var(--font-xs);
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  .container--footer,
+  .container--details {
+    padding: var(--size-sm-2);
+    text-align: center;
+  }
+
+  .title {
+    font-size: var(--font-lg);
+  }
+
+  .description {
+    font-size: var(--font-sm);
+  }
+
+  .link {
+    padding: var(--size-sm-1) var(--size-sm-2);
+    font-size: var(--font-xs);
+  }
+
+  .link::before {
+    content: none;
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .link:hover {
+    transform: none;
+  }
+
+  .link:hover::before {
+    transform: none;
+  }
+}

@@ -1,0 +1,137 @@
+/**
+ * Title Styles
+ * 
+ * Flexible title component with multiple variants,
+ * theme support, and smooth transitions.
+ */
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  transition: color var(--transition-base);
+}
+
+.titleContainer--padding {
+  padding: var(--size-sm-3);
+}
+
+.titleContainer--nopadding {
+  padding: 0;
+}
+
+.title {
+  font-family: var(--font-outfit);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  text-wrap: nowrap;
+  letter-spacing: var(--letter-spacing-wide);
+  transition: color var(--transition-base), text-shadow var(--transition-base);
+}
+
+
+
+.title--padding {
+  padding: 1rem;
+}
+
+.title--white {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.title--nopadding {
+  padding: 0;
+}
+
+.title--small {
+  font-size: var(--font-lg);
+}
+
+
+.title--medium {
+  font-size: var(--font-xl);
+}
+ 
+
+
+.title--large {
+  font-size: var(--font-2xl);
+}
+
+.title--border {
+  border: 0.5rem solid var(--color-border);
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.title--border:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-secondary);
+}
+
+.title--borderless {
+  border: none;
+}
+
+.title--left {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.title--right {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.title--center {
+  align-self: center;
+  text-align: center;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media screen and (max-width: 768px) {
+  .titleContainer--padding {
+    padding: var(--size-sm-2);
+  }
+
+  .title {
+    font-size: var(--font-lg);
+    text-align: center;
+  }
+
+  .title--left,
+  .title--right {
+    align-self: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .titleContainer--padding {
+    padding: var(--size-sm-1);
+  }
+
+  .title {
+    font-size: var(--font-md);
+  }
+
+  .title--border {
+    border-width: 0.3rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .title {
+    transition: none;
+  }
+
+  .title--border:hover {
+    transition: none;
+  }
+}

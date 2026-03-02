@@ -1,0 +1,189 @@
+/**
+ * Portfolio Styles
+ * 
+ * Work showcase with theme support, smooth transitions,
+ * and enhanced hover effects.
+ */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--size-md-1);
+  width: 100%;
+  background: var(--color-bg-primary);
+  padding: var(--size-md-3) var(--size-md-2);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  gap: var(--size-md-2);
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-0.8rem);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--size-md-1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--color-white);
+  padding: var(--size-md-2);
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity var(--transition-base),
+    backdrop-filter var(--transition-base);
+  z-index: 10;
+}
+
+.card:hover .content {
+  opacity: 1;
+}
+
+.title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.description {
+  font-size: var(--font-md);
+  color: var(--color-secondary);
+  margin: 0;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1280px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: var(--size-md-1);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--size-md-1) var(--size-sm-2);
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: var(--size-md-1);
+  }
+
+  .card {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-md);
+  }
+
+  .content {
+    padding: var(--size-md-1);
+    background: rgba(0, 0, 0, 0.8);
+
+    /* Show content on mobile by default */
+    opacity: 1;
+  }
+
+  .title {
+    font-size: var(--font-lg);
+  }
+
+  .description {
+    font-size: var(--font-sm);
+  }
+}
+
+@media (max-width: 375px) {
+  .section {
+    padding: var(--size-sm-2);
+  }
+
+  .container {
+    gap: var(--size-sm-2);
+  }
+
+  .card {
+    aspect-ratio: 3 / 2;
+  }
+
+  .content {
+    padding: var(--size-sm-2);
+    gap: var(--size-sm-2);
+  }
+
+  .title {
+    font-size: var(--font-md);
+  }
+
+  .description {
+    font-size: var(--font-xs);
+    display: none;
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    transform: none;
+  }
+
+  .image {
+    transition: none;
+  }
+
+  .card:hover .image {
+    transform: none;
+  }
+
+  .content {
+    transition: opacity var(--transition-fast);
+  }
+}

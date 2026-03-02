@@ -1,0 +1,145 @@
+/**
+ * ContentBlock Styles
+ * 
+ * Responsive content sections with theme support,
+ * smooth transitions, and enhanced hover effects.
+ */
+
+.container--about {
+  display: flex;
+  padding: var(--size-lg-1);
+  gap: var(--size-md-2);
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--color-bg-primary);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.container--skills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--size-md-2);
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--size-lg-1);
+  place-items: center;
+  background: var(--color-bg-primary);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.skillCard {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--size-sm-2);
+  word-break: break-word;
+  min-width: fit-content;
+  align-items: center;
+  padding: var(--size-sm-2);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.skillCard:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-primary);
+  transform: translateY(-0.4rem);
+  box-shadow: var(--shadow-md);
+}
+
+.skillCard:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.description {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  word-spacing: 3px;
+  transition: color var(--transition-base);
+  text-align: center;
+  line-height: var(--line-height-relaxed);
+}
+
+.image {
+  width: 8.4rem;
+  height: auto;
+  transition:
+    transform var(--transition-base),
+    filter var(--transition-base);
+}
+
+.skillCard:hover .image {
+  transform: scale(1.08);
+  filter: drop-shadow(var(--shadow-md));
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media screen and (max-width: 1024px) {
+  .container--skills {
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--size-md-2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container--about {
+    padding: var(--size-md-1);
+    gap: var(--size-md-1);
+  }
+
+  .container--skills {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--size-md-1);
+    padding: var(--size-md-1);
+  }
+
+  .skillCard {
+    padding: var(--size-sm-1);
+  }
+
+  .image {
+    width: 6.4rem;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .container--about {
+    padding: var(--size-sm-2);
+  }
+
+  .container--skills {
+    grid-template-columns: 1fr;
+    padding: var(--size-sm-2);
+  }
+
+  .skillCard {
+    width: 100%;
+  }
+
+  .image {
+    width: 5.6rem;
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .skillCard:hover {
+    transform: none;
+  }
+
+  .image {
+    transition: none;
+  }
+}
