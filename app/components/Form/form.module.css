@@ -127,6 +127,7 @@
 }
 
 @media screen and (max-width: 768px) {
+
   .section,
   .form {
     padding: var(--size-sm-2);
@@ -144,6 +145,7 @@
 }
 
 @media screen and (max-width: 375px) {
+
   .section,
   .form {
     padding: var(--size-sm-1);
@@ -163,6 +165,7 @@
 
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
+
   .input,
   .button {
     transition: none;
