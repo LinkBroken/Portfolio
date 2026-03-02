@@ -80,7 +80,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                                     <PolarGrid stroke={theme.palette.divider} />
                                     <PolarAngleAxis
                                         dataKey="subject"
-                                        tick={{ fill: theme.palette.text.secondary, fontSize: 11, fontWeight: 700 }}
+                                        tick={{ fill: theme.palette.text.secondary, fontSize: 13, fontWeight: 700 }}
                                     />
                                     <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                                     <Radar
@@ -138,7 +138,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                                                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                                                 />
                                             </Box>
-                                            <Typography variant="caption" fontWeight={800} sx={{ mb: 0.5, lineHeight: 1.2 }}>
+                                            <Typography variant="body2" fontWeight={800} sx={{ mb: 0.5, lineHeight: 1.2 }}>
                                                 {skill.name}
                                             </Typography>
                                             <Chip
@@ -146,8 +146,8 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                                                 size="small"
                                                 color={skill.level === 'Strong' ? 'primary' : 'default'}
                                                 sx={{
-                                                    fontSize: '0.6rem',
-                                                    height: 18,
+                                                    fontSize: '0.9rem',
+                                                    height: 22,
                                                     fontWeight: 800
                                                 }}
                                             />
@@ -194,7 +194,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
                                                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                                             />
                                         </Box>
-                                        <Typography variant="caption" fontWeight={800}>
+                                        <Typography variant="body2" fontWeight={800}>
                                             {skill.name}
                                         </Typography>
                                     </Card>

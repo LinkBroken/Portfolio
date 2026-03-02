@@ -84,6 +84,7 @@ export default function Form({ introText }: FormProps) {
                 {...register("from_name")}
                 error={!!errors.from_name}
                 helperText={errors.from_name?.message}
+                FormHelperTextProps={{ sx: { fontSize: '1.4rem' } }}
                 sx={{ bgcolor: 'background.paper' }}
               />
 
@@ -95,6 +96,7 @@ export default function Form({ introText }: FormProps) {
                 {...register("reply_to")}
                 error={!!errors.reply_to}
                 helperText={errors.reply_to?.message}
+                FormHelperTextProps={{ sx: { fontSize: '1.4rem' } }}
                 sx={{ bgcolor: 'background.paper' }}
               />
 
@@ -107,6 +109,7 @@ export default function Form({ introText }: FormProps) {
                 {...register("message")}
                 error={!!errors.message}
                 helperText={errors.message?.message}
+                FormHelperTextProps={{ sx: { fontSize: '1.4rem' } }}
                 sx={{ bgcolor: 'background.paper' }}
               />
 
